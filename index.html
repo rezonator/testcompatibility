@@ -13,22 +13,25 @@
 
     <script>
 
-        function testIntl() {
+        $("#myul").append("<li>" + ("RelativeTimeFormat" in Intl) + "</li>");
+        
 
-            // internalization !!!!
-            const rtf = new Intl.RelativeTimeFormat('pl', { numeric: 'auto' });
+        // function testIntl() {
 
-            $("#myul").append(`<li>${ rtf.format(-1, 'day') }</li>`);
-            $("#myul").append(`<li>${ rtf.format(0, 'day') }</li>`);
-            $("#myul").append(`<li>${ rtf.format(1, 'day') }</li>`);
+        //     // internalization !!!!
+        //     const rtf = new Intl.RelativeTimeFormat('pl', { numeric: 'auto' });
 
-            $("#myul").append(`<li>${ rtf.format(-1, 'week') }</li>`);
-            $("#myul").append(`<li>${ rtf.format(0, 'week') }</li>`);
-            $("#myul").append(`<li>${ rtf.format(1, 'week') }</li>`);
-        };
+        //     $("#myul").append(`<li>${ rtf.format(-1, 'day') }</li>`);
+        //     $("#myul").append(`<li>${ rtf.format(0, 'day') }</li>`);
+        //     $("#myul").append(`<li>${ rtf.format(1, 'day') }</li>`);
+
+        //     $("#myul").append(`<li>${ rtf.format(-1, 'week') }</li>`);
+        //     $("#myul").append(`<li>${ rtf.format(0, 'week') }</li>`);
+        //     $("#myul").append(`<li>${ rtf.format(1, 'week') }</li>`);
+        // };
 
 
-        testIntl();
+        // testIntl();
 
         // function testNonIntl() {
 
