@@ -1,83 +1,106 @@
 <html>
 
-<head></head>
+<head>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+</head>
 
 <body>
-
+    <h3>Soooo...</h3>
+    <ul id="myul"></ul>
 
     <script>
-
-        function testNonIntl() {
-
-            //Iterate 
-            const object = { name: 'Jarik', age: 23 };
-            const entries = Object.entries(object);
-            for (const [k, v] of entries) {
-                console.log(`Key : ${k} : ${v}`);
-            }
-
-            // map
-            const map = new Map(entries);
-            console.log(`Im the map ${map}`);
-
-
-            //global this.
-            console.log(globalThis);
-
-
-            // Flat map
-            var func = x => [x, x];
-            const ary = [1, 2, [4, 5]];
-
-            var fa = ary.flatMap(func);
-            console.log(fa);
-        }
 
         function testIntl() {
 
             // internalization !!!!
             const rtf = new Intl.RelativeTimeFormat('pl', { numeric: 'auto' });
-            console.log(rtf.format(-1, 'day'));
-            console.log(rtf.format(0, 'day'));
-            console.log(rtf.format(1, 'day'));
-            console.log(rtf.format(-1, 'week'));
-            console.log(rtf.format(0, 'week'));
-            console.log(rtf.format(1, 'week'));
 
+            $("#myul").append(`<li>${ rtf.format(-1, 'day') }</li>`);
+            $("#myul").append(`<li>${ rtf.format(0, 'day') }</li>`);
+            $("#myul").append(`<li>${ rtf.format(1, 'day') }</li>`);
+
+            $("#myul").append(`<li>${ rtf.format(-1, 'week') }</li>`);
+            $("#myul").append(`<li>${ rtf.format(0, 'week') }</li>`);
+            $("#myul").append(`<li>${ rtf.format(1, 'week') }</li>`);
         };
-
-        // testLists(['Ala']);
-        // testLists(['Ala','Ada']);
-        // testLists(['Ala','Ada', 'Mada'], true);
-        function testLists(array, isDis = false) {
-            var lfPolish = null;
-
-            if(isDis)
-                lfPolish = new Intl.ListFormat('pl', { type : 'disjunction'});
-            else 
-                lfPolish = new Intl.ListFormat('pl');
-
-            console.log(lfPolish.format(array));
-        }
-
-        //testDates(1600000000000, 1700000000000);
-        function testDates(startT, endT) {
-            const start = new Date(startT);
-            const end = new Date(endT);
-
-            const fmt = new Intl.DateTimeFormat('pl', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-
-            const output = `${fmt.format(start)} - ${fmt.format(end)}`;
-            console.log(output);
-        }
 
 
         testIntl();
-        
+
+        // function testNonIntl() {
+
+        //     //Iterate 
+        //     const object = { name: 'Jarik', age: 23 };
+        //     const entries = Object.entries(object);
+        //     for (const [k, v] of entries) {
+        //         console.log(`Key : ${k} : ${v}`);
+        //     }
+
+        //     // map
+        //     const map = new Map(entries);
+        //     console.log(`Im the map ${map}`);
+
+
+        //     //global this.
+        //     console.log(globalThis);
+
+
+        //     // Flat map
+        //     var func = x => [x, x];
+        //     const ary = [1, 2, [4, 5]];
+
+        //     var fa = ary.flatMap(func);
+        //     console.log(fa);
+        // }
+
+        // function testIntl() {
+
+        //     // internalization !!!!
+        //     const rtf = new Intl.RelativeTimeFormat('pl', { numeric: 'auto' });
+        //     console.log(rtf.format(-1, 'day'));
+        //     console.log(rtf.format(0, 'day'));
+        //     console.log(rtf.format(1, 'day'));
+        //     console.log(rtf.format(-1, 'week'));
+        //     console.log(rtf.format(0, 'week'));
+        //     console.log(rtf.format(1, 'week'));
+
+        // };
+
+        // // testLists(['Ala']);
+        // // testLists(['Ala','Ada']);
+        // // testLists(['Ala','Ada', 'Mada'], true);
+        // function testLists(array, isDis = false) {
+        //     var lfPolish = null;
+
+        //     if(isDis)
+        //         lfPolish = new Intl.ListFormat('pl', { type : 'disjunction'});
+        //     else 
+        //         lfPolish = new Intl.ListFormat('pl');
+
+        //     console.log(lfPolish.format(array));
+        // }
+
+        // //testDates(1600000000000, 1700000000000);
+        // function testDates(startT, endT) {
+        //     const start = new Date(startT);
+        //     const end = new Date(endT);
+
+        //     const fmt = new Intl.DateTimeFormat('pl', {
+        //         year: 'numeric',
+        //         month: 'long',
+        //         day: 'numeric'
+        //     });
+
+        //     const output = `${fmt.format(start)} - ${fmt.format(end)}`;
+        //     console.log(output);
+        // }
+
+
+        // testIntl();
+
 
 
     </script>
