@@ -16,7 +16,8 @@
 
     <script>
 
-        $("#myul").append("<li>" + ("RelativeTimeFormat" in Intl) + "</li>");
+        var rel = new Intl.RelativeTimeFormat('pl', { numeric: 'auto' })
+        $("#myul").append("<li>" + rel.format(-1, 'day') + "</li>");
         
 
         // function testIntl() {
